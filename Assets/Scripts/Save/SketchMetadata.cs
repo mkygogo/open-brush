@@ -678,7 +678,7 @@ namespace TiltBrush
         public CameraPathFovKnotMetadata[] FovKnots { get; set; }
 
         public bool belongsAnimation;
-        public (int,int) timelineLoc;
+        public (int, int) timelineLoc;
     }
 
     [Serializable]
@@ -721,7 +721,7 @@ namespace TiltBrush
         public string Name;
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-        public List<int> frameLengths ;
+        public List<int> frameLengths;
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public bool Visible;
     }
@@ -1186,7 +1186,7 @@ namespace TiltBrush
         public AnimationMetadata AnimationTracks { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public CameraPathMetadata[] CameraPaths { get; set; }
-     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public AnimationPathMetadata[] AnimationPaths { get; set; }
 
         // Added for 24.0b Open-source edition

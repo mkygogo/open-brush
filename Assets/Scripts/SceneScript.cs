@@ -316,11 +316,12 @@ namespace TiltBrush
             return IsLayerDeleted(layerIndex);
         }
 
-        public (int,int) GetIndexOfCanvas(CanvasScript canvas)
+        public (int, int) GetIndexOfCanvas(CanvasScript canvas)
         {
-            if (App.Scene.animationUI_manager == null || App.Scene.animationUI_manager.GetTimelineLength() == 0){
+            if (App.Scene.animationUI_manager == null || App.Scene.animationUI_manager.GetTimelineLength() == 0)
+            {
                 int index = m_LayerCanvases.IndexOf(canvas);
-                return (index + 1,0);
+                return (index + 1, 0);
             }
             return App.Scene.animationUI_manager.GetCanvasLocation(canvas);
         }
@@ -378,7 +379,8 @@ namespace TiltBrush
             animationUI_manager.UpdateLayerVisibilityRefresh(canvas);
         }
 
-        public void TriggerLayersUpdate(){
+        public void TriggerLayersUpdate()
+        {
             App.Scene.LayerCanvasesUpdate?.Invoke();
         }
 
@@ -408,7 +410,8 @@ namespace TiltBrush
 
         public CanvasScript GetOrCreateLayer(int layerIndex, int frameIndex)
         {
-            if (layerIndex < animationUI_manager.Timeline.Count && frameIndex < animationUI_manager.GetTimelineLength()){
+            if (layerIndex < animationUI_manager.Timeline.Count && frameIndex < animationUI_manager.GetTimelineLength())
+            {
                 return animationUI_manager.GetTimelineCanvas(layerIndex, frameIndex);
             }
             return GetOrCreateLayer(layerIndex);
@@ -502,13 +505,13 @@ namespace TiltBrush
                 {
                     if (f > 0)
                     {
-                        if (timeline[i].Frames[f].Canvas.Equals(timeline[i].Frames[f-1].Canvas))
+                        if (timeline[i].Frames[f].Canvas.Equals(timeline[i].Frames[f - 1].Canvas))
                         {
                             frameLengthsFound[frameLengthsFound.Count - 1]++;
                         }
                         else
                         {
-                             frameLengthsFound.Add(1);
+                            frameLengthsFound.Add(1);
                         }
                     }
                     else

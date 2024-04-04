@@ -185,6 +185,7 @@ namespace TiltBrush
         /// active simultaneously. eg, 4-way symmetry is not allowed during timeline edit mode;
         /// floating-panel mode doesn't actually _use_ the Wand's pointer, etc.
         private PointerData[] m_Pointers;
+
         private List<PointerScript> m_RemoteUserPointers;
 
         private List<PointerScript> m_ScriptedPointers;

@@ -277,7 +277,7 @@ namespace TiltBrush
         // How big is too big?
         private static void _ModelFromImage(Texture2D image, float clip = 0.5f)
         {
-            var type = GridEnums.GridTypes.K_4_4_4_4;
+            var type = GridEnums.GridTypes.Square;
             var shape = GridEnums.GridShapes.Plane;
             var poly = Grids.Build(type, shape, image.width, image.height);
             var pixels = image.GetPixels();
@@ -435,7 +435,7 @@ namespace TiltBrush
 
             if (string.IsNullOrEmpty(type))
             {
-                gridType = GridEnums.GridTypes.K_4_4_4_4;
+                gridType = GridEnums.GridTypes.Square;
             }
             else
             {
@@ -457,7 +457,7 @@ namespace TiltBrush
             var recipe = new PolyRecipe
             {
                 ColorMethod = ColorMethods.ByRole,
-                GeneratorType = GeneratorTypes.Grid,
+                GeneratorType = GeneratorTypes.RegularGrids,
                 GridType = (GridEnums.GridTypes)Enum.Parse(typeof(GridEnums.GridTypes), type),
                 GridShape = (GridEnums.GridShapes)Enum.Parse(typeof(GridEnums.GridShapes), shape),
                 Param1Int = width,

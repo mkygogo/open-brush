@@ -146,6 +146,11 @@ namespace TiltBrush
         void Awake()
         {
             m_Instance = this;
+            Init();
+        }
+
+        public void Init()
+        {
             m_BuiltinBrushes = new Dictionary<Guid, Brush>();
             m_LibraryBrushes = new Dictionary<Guid, Brush>();
             m_SceneBrushes = new Dictionary<Guid, Brush>();
@@ -161,7 +166,6 @@ namespace TiltBrush
                 m_MaterialToBrush.Add(m_BlocksMaterials[i].brushDescriptor.Material,
                                       m_BlocksMaterials[i].brushDescriptor);
             }
-
             Shader.SetGlobalTexture("_GlobalNoiseTexture", m_GlobalNoiseTexture);
 
             if (Directory.Exists(App.UserBrushesPath()))
@@ -253,7 +257,7 @@ namespace TiltBrush
             }
 
             // Postprocess: put brushes into parse-friendly list
-
+            m_GuiBrushList.Clear();
             foreach (var brush in m_GuidToBrush.Values)
             {
                 if (brush.m_HiddenInGui)

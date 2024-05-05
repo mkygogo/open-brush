@@ -602,19 +602,6 @@ namespace TiltBrush
             return false;
         }
 
-        public bool AnyActiveAnimationPathHasAKnot()
-        {
-            var datas = AnimationPathWidgets;
-            foreach (TypedWidgetData<CameraPathWidget> data in datas)
-            {
-                if (data.WidgetScript.Path.NumPositionKnots > 0)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public void DeleteCameraPath(GrabWidget cameraPathWidgetScript)
         {
             if (cameraPathWidgetScript != null)

@@ -96,10 +96,8 @@ namespace TiltBrush
             var strokes = SketchMemoryScript.AllStrokes();
             int numStrokes = SketchMemoryScript.AllStrokesCount();
             m_Strokes = new List<SketchWriter.AdjustedMemoryBrushStroke>(numStrokes);
-            Debug.Log("HELLO");
             foreach (var strokeSnapshot in SketchWriter.EnumerateAdjustedSnapshots(strokes))
             {
-                Debug.Log("STROKE HERE");
                 if (stopwatch.ElapsedTicks > maxTicks)
                 {
                     stopwatch.Reset();

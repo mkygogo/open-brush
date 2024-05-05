@@ -19391,12 +19391,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MainCanvas: {fileID: 1843608206}
   m_SelectionCanvas: {fileID: 1830711221}
-  m_CanvasTransformPrefab: {fileID: 3644847496883318441, guid: 546467450645e1140902522a7f7baf56,
-    type: 3}
   animationUI_manager: {fileID: 0}
   captureRig: {fileID: 0}
   m_ActiveCanvas: {fileID: 0}
   m_LayerCanvases: []
+  m_CanvasTransformPrefab: {fileID: 3644847496883318441, guid: 546467450645e1140902522a7f7baf56,
+    type: 3}
 --- !u!1 &1372392204
 GameObject:
   m_ObjectHideFlags: 0
@@ -31077,6 +31077,21 @@ MonoBehaviour:
     m_ModeQuest: 1
     m_Basic: 0
     m_Advanced: 1
+  - m_PanelPrefab: {fileID: 176644, guid: 832e29c521f326a41adfb1176478943b, type: 3}
+    m_ModeVr: 1
+    m_ModeVrExperimental: 1
+    m_ModeQuestExperimental: 1
+    m_ModeMono: 1
+    m_ModeQuest: 1
+    m_ModeGvr: 1
+    m_Basic: 0
+    m_Advanced: 1
+  - m_PanelPrefab: {fileID: 176644, guid: e4e1ee92a3873da4d8e7fcc9f2501591, type: 3}
+    m_ModeVr: 1
+    m_ModeMono: 1
+    m_ModeQuest: 1
+    m_Basic: 0
+    m_Advanced: 1
   - m_PanelPrefab: {fileID: 199434, guid: 6dafd36d9488aba4a998d2ef69ea2553, type: 3}
     m_ModeVr: 1
     m_ModeMono: 1
@@ -31188,7 +31203,6 @@ MonoBehaviour:
     type: 3}
   m_SceneLightGizmoPrefab: {fileID: 1712584378369130260, guid: f28bfd6efbf3cb046be485c6573ca207,
     type: 3}
-  m_TextWidgetPrefab: {fileID: 11466202, guid: c28bc4e3ed71248b889df2a70d873d0b, type: 3}
   mCameraPathWidgetPrefab: {fileID: 114268259032398848, guid: a933b2a19614a6c4da08a0143f0ec912,
     type: 3}
   mCameraPathPositionKnotPrefab: {fileID: 1334758335721002, guid: 38b506951b7a81e4e9a6c65a9a20efa9,
@@ -31201,6 +31215,7 @@ MonoBehaviour:
     type: 3}
   mCameraPathKnotSegmentPrefab: {fileID: 1134264905350750, guid: 30133aa311127674b9021c2f6baae4d3,
     type: 3}
+  m_TextWidgetPrefab: {fileID: 11466202, guid: c28bc4e3ed71248b889df2a70d873d0b, type: 3}
   m_Home: {fileID: 1780237822}
   m_HomeHintLinePrefab: {fileID: 164972, guid: 0ce8790842bf7424d9065461833d80e9, type: 3}
   m_WidgetSnapAngle: 15

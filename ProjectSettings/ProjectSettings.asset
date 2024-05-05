@@ -996,13 +996,10 @@ PlayerSettings:
     Build: 0
     Collab: 0
     ErrorHub: 0
-    Game Performance: 0
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UDP: 0
     UNet: 0
-    Unity Ads: 0
     Unity_Ads: 0
   luminIcon:
     m_Name:
@@ -1017,7 +1014,6 @@ PlayerSettings:
     m_VersionName:
   apiCompatibilityLevel: 6
   activeInputHandler: 1
-  cloudProjectId: 4f08e4b9-be4b-46f5-983f-acc2b6b44e75
   windowsGamepadBackendHint: 0
   cloudProjectId:
   framebufferDepthMemorylessMode: 0

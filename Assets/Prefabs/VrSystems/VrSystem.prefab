@@ -406,8 +406,8 @@ GameObject:
   - component: {fileID: 20000011692615516}
   - component: {fileID: 2296036118514048326}
   - component: {fileID: 114000011221534130}
-  - component: {fileID: 2124105252138027340}
   - component: {fileID: 114000014001565202}
+  - component: {fileID: 2124105252138027340}
   - component: {fileID: 124000014121364414}
   - component: {fileID: 114000013533438718}
   - component: {fileID: 81000010563896060}
@@ -510,20 +510,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StencilToMaskMaterial: {fileID: 2100000, guid: fc6175dc3f232544f9e8744f14131f59,
     type: 2}
---- !u!114 &2124105252138027340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013132276250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6ed2bfa506ab146b035534d5f74b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  premultipliedAlphaShader: {fileID: 4800000, guid: be3bd046ca113f645a9031f10721d001,
-    type: 3}
 --- !u!114 &114000014001565202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +534,20 @@ MonoBehaviour:
   m_SelectionHueSpeed: 0.5
   m_SelectionHueStereoOffset: 0.2
   m_NoiseSparkleSpeed: 0.5
+--- !u!114 &2124105252138027340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013132276250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6ed2bfa506ab146b035534d5f74b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  premultipliedAlphaShader: {fileID: 4800000, guid: be3bd046ca113f645a9031f10721d001,
+    type: 3}
 --- !u!124 &124000014121364414
 Behaviour:
   m_ObjectHideFlags: 0

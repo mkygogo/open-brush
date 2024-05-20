@@ -1925,7 +1925,7 @@ static class BuildTiltBrush
         else if (Directory.Exists(source))
         {
             Directory.CreateDirectory(dest);
-            DirectoryIn dir = new DirectoryInfo(source);
+            DirectoryInfo dir = new DirectoryInfo(source);
             foreach (FileInfo file in dir.GetFiles())
             {
                 if (file.Extension == ".meta")

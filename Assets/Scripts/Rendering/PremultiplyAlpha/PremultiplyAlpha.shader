@@ -6,13 +6,10 @@ Shader "Custom/PremultipliedAlphaShader"
     }
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
-        LOD 100
-
         Pass
         {
-            ZTest Always Cull Off ZWrite Off
-            Blend One OneMinusSrcAlpha // This blend mode is for premultiplied alpha
+            ZTest Off Cull Off ZWrite Off
+            Blend One OneMinusSrcAlpha
             Fog { Mode Off }
 
             CGPROGRAM

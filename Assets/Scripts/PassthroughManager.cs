@@ -24,6 +24,20 @@ namespace TiltBrush
             var passthrough  = gameObject.AddComponent<OVRPassthroughLayer>();
             passthrough.overlayType = OVROverlay.OverlayType.Underlay;
 #endif // OCULUS_SUPPORTED
+
+#if PICO_SUPPORTED
+            Unity.XR.PXR.PXR_MixedReality.EnableVideoSeeThrough(true);
+#endif // PICO_SUPPORTED
         }
+
+#if PICO_SUPPORTED
+        void OnApplicationPause(bool pause)
+        {
+            if (!pause)
+            {
+                Unity.XR.PXR.PXR_MixedReality.EnableVideoSeeThrough(true);
+            }
+        }
+#endif // PICO_SUPPORTED
     }
 }

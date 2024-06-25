@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#if OCULUS_SUPPORTED || ZAPBOX_SUPPORTED
+#if OCULUS_SUPPORTED || ZAPBOX_SUPPORTED || PICO_SUPPORTED
 #define PASSTHROUGH_SUPPORTED
 #endif
 

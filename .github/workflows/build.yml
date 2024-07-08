@@ -136,24 +136,8 @@ jobs:
           # For a PR action (i.e., syncronize / open), the value of github.ref will be refs/pull/1234/merge
           # For a push action, it will be either refs/heads/foo_branch_name OR refs/tags/v1234.
           # We want to use the base name for pushes of tags or to main, the PR number for PRs, and the branch name for named branches.
-          if [[ "$PRERELEASE" == "false" || ${{ github.ref }} == refs/heads/main ]]
-          then
-            echo "basename=OpenBrush" >> $GITHUB_OUTPUT
-            echo "description=" >> $GITHUB_OUTPUT
-          else
-            if [[ ${{ github.ref }} == refs/pull/* ]]
-            then
-              DESCRIPTION="PR#$(echo ${{ github.ref }} | sed -e 's#refs/pull/##' -e 's#/merge##')"
-            elif [[ ${{ github.ref }} == refs/heads/* ]]
-            then
-              DESCRIPTION="$(echo ${{ github.ref }} | sed -e 's#refs/heads/##')"
-            else
-              DESCRIPTION="Unknown"
-            fi
-            echo "description=-btb-description ${DESCRIPTION}" >> $GITHUB_OUTPUT
-            IDENTIFIER=$(echo ${DESCRIPTION} | sed -e 's/[\/#_-]//g')
-            echo "basename=OpenBrush-${IDENTIFIER}" >> $GITHUB_OUTPUT
-          fi
+          echo "basename=OpenBrush" >> $GITHUB_OUTPUT
+          echo "description=" >> $GITHUB_OUTPUT
           echo "uid=$(id -u)" >> $GITHUB_OUTPUT
           echo "gid=$(id -g)" >> $GITHUB_OUTPUT
 
@@ -1066,10 +1050,6 @@ jobs:
     name: Publish Oculus Quest 2+ Release
     needs: [configuration, build]
     runs-on: macos-latest  # the ovr-platform-util tool is only available for Mac and Windows
-    if: |
-      github.event_name == 'push' &&
-      github.repository == 'icosa-foundation/open-brush' &&
-      (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
 
     steps:
       - name: Download Build Artifacts (Oculus Quest 2+)
@@ -1099,17 +1079,13 @@ jobs:
             ./ovr-platform-util upload-quest-build --app-id ${OCULUS_QUEST_APP_ID} --app-secret ${OCULUS_QUEST_APP_SECRET} --apk OpenBrush_Quest_$VERSION.apk --channel LIVE:quest2+ --debug_symbols_dir ./arm64-v8a/ --debug-symbols-pattern '*.so' --age-group MIXED_AGES
           else
             CHANGELOG="${RAW_CHANGELOG}"
-            ./ovr-platform-util upload-quest-build --app-id ${OCULUS_QUEST_APP_ID} --app-secret ${OCULUS_QUEST_APP_SECRET} --apk OpenBrush_Quest_$VERSION.apk --channel Beta:quest2+ --debug_symbols_dir ./arm64-v8a/ --debug-symbols-pattern '*.so' --notes "${CHANGELOG}" --age-group MIXED_AGES
+            ./ovr-platform-util upload-quest-build --app-id ${OCULUS_QUEST_APP_ID} --app-secret ${OCULUS_QUEST_APP_SECRET} --apk OpenBrush_Quest_$VERSION.apk --channel MRPassthroughTest:quest2+ --debug_symbols_dir ./arm64-v8a/ --debug-symbols-pattern '*.so' --notes "${CHANGELOG}" --age-group MIXED_AGES
           fi
 
   publish_oculus_quest1:
     name: Publish Oculus Quest 1 Release
     needs: [configuration, build]
     runs-on: macos-latest  # the ovr-platform-util tool is only available for Mac and Windows
-    if: |
-      github.event_name == 'push' &&
-      github.repository == 'icosa-foundation/open-brush' &&
-      (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
 
     steps:
       - name: Download Build Artifacts (Oculus Quest 1)
@@ -1139,7 +1115,7 @@ jobs:
             ./ovr-platform-util upload-quest-build --app-id ${OCULUS_QUEST_APP_ID} --app-secret ${OCULUS_QUEST_APP_SECRET} --apk OpenBrush_Quest1_$VERSION.apk --channel LIVE:quest1only --debug_symbols_dir ./arm64-v8a/ --debug-symbols-pattern '*.so' --age-group MIXED_AGES
           else
             CHANGELOG="${RAW_CHANGELOG}"
-            ./ovr-platform-util upload-quest-build --app-id ${OCULUS_QUEST_APP_ID} --app-secret ${OCULUS_QUEST_APP_SECRET} --apk OpenBrush_Quest1_$VERSION.apk --channel Beta:quest1only --debug_symbols_dir ./arm64-v8a/ --debug-symbols-pattern '*.so' --notes "${CHANGELOG}" --age-group MIXED_AGES
+            ./ovr-platform-util upload-quest-build --app-id ${OCULUS_QUEST_APP_ID} --app-secret ${OCULUS_QUEST_APP_SECRET} --apk OpenBrush_Quest1_$VERSION.apk --channel MRPassthroughTest:quest1only --debug_symbols_dir ./arm64-v8a/ --debug-symbols-pattern '*.so' --notes "${CHANGELOG}" --age-group MIXED_AGES
           fi
 
   publish_oculus_rift:

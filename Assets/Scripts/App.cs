@@ -51,7 +51,7 @@ namespace TiltBrush
         public const float UNITS_TO_METERS = .1f;
 
         // This is the name of the app, as displayed to the users running it.
-        public const string kAppDisplayName = "Open Brush";
+        public const string kAppDisplayName = "Open Brush MKY";
         // This is the App name used when speaking to Google services
         public const string kGoogleServicesAppName = kAppDisplayName;
         // The name of the configuration file. You may want to change this if you think your users may

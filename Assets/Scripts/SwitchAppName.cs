@@ -38,7 +38,8 @@ namespace TiltBrush
 
         private string Switch(string target)
         {
-            return target.Replace("Tilt Brush", App.kAppDisplayName);
+            //return target.Replace("Tilt Brush", App.kAppDisplayName);
+            return target.Replace("Tilt Brush", "My Brush");
         }
     }
 }
